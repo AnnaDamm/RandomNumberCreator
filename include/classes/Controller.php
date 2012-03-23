@@ -43,7 +43,7 @@ class Controller
                 'time' => time()
             );
             array_unshift($_SESSION['results'], $returnArray);
-            if (count($_SESSION['results']) >= 100) {
+            if (count($_SESSION['results']) >= Configuration::get('maxResultsPerSession')) {
                 array_pop($_SESSION['results']);
             }
         } catch (Exception $e) {
