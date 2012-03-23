@@ -75,7 +75,7 @@
             </table>
         </div>
         <footer>
-            RPG Dice 1.2 &copy; 2011 Valinchen
+            <a href="https://github.com/Arany/RandomNumberCreator">Random Number Creator 1.2 </a>
         </footer>
     </body>
 </html>
