@@ -1,0 +1,54 @@
+body {
+    vertical-align: middle;
+    text-align: center;
+    width: 99%;
+}
+div#main, form {
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+}
+form {
+    height: 4em;
+}
+div#main {
+    position: relative;
+    top: 4em;
+    clear: both;
+}
+table#rolls {
+    width: 100%;
+}
+td, th {
+    text-align: left;
+    width: 33%;
+}
+td.result {
+    font-weight: bold;
+}
+header, footer {
+    width: inherit;
+    position: fixed;
+    background: white;
+    z-index: 1000;
+}
+header {
+    text-align: center;
+    border-bottom: gray dotted thin;
+    top: 0px;
+}
+footer {
+    border-top: gray dotted thin;
+    bottom: 0px;
+}
+
+fieldset#diceroll, fieldset#standardrolls, fieldset#publish, fieldset#clear {
+    float: left;
+}
+
+div#link {
+    width: 100%;
+}
+div#link input {
+    width: 95%;
+}
