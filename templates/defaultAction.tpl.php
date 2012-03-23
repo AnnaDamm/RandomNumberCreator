@@ -10,7 +10,7 @@
     </head>
     <body>
         <script type="text/javascript">
-            var refreshPage = <?php echo json_encode($refreshPage); ?>
+            var refreshPage = <?php echo json_encode($refreshPage); ?>;
         </script>
         <header>
             <form id="dice" action="?action=roll" method="post">
@@ -60,19 +60,13 @@
                     </tr>
                 </thead>
                 <tbody id="rollresults">
-                    <?php if ($returnArray['success'] === false) : ?>
-                        <tr class="error">
-                            <td colspan="3"><?php echo $returnArray["error"]; ?></td>
-                        </tr>
-                    <?php endif; ?>
-                    <?php if (!empty($sessionResults)) : ?>
-                        <?php foreach ($sessionResults as $returnArray) : ?>
-                            <?php if ($returnArray['success'] === true) : ?>
+                    <?php if (!empty($returnArray)) : ?>
+                        <?php foreach ($returnArray as $currentResult) : ?>
+                            <?php if ($currentResult['success'] === true) : ?>
                                 <tr>
-                                    <td class="dice"><?php echo $returnArray["dice"]; ?></td>
-                                    <td class="result"><?php echo $returnArray["result"]; ?></td>
-                                    <td class="time"><?php echo date("H:i:s",
-                            $returnArray["time"]); ?></td>
+                                    <td class="dice"><?php echo $currentResult["dice"]; ?></td>
+                                    <td class="result"><?php echo $currentResult["result"]; ?></td>
+                                    <td class="time"><?php echo date("H:i:s", $currentResult["time"]); ?></td>
                                 </tr>
                             <?php endif; ?>
                         <?php endforeach; ?>
